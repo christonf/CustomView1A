@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/msi_e/AndroidStudioProjects/CustomView1A/app/src/main/res/drawable/ic_clear_black_24dp.xml" value="0.1735" />
+        <entry key="..\:/Users/msi_e/AndroidStudioProjects/CustomView1A/app/src/main/res/drawable/ic_clear_opaque_24dp.xml" value="0.1735" />
         <entry key="..\:/Users/msi_e/AndroidStudioProjects/CustomView1A/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/msi_e/AndroidStudioProjects/CustomView1A/app/src/main/res/layout/activity_main2.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/msi_e/AndroidStudioProjects/CustomView1A/app/src/main/res/menu/menu.xml" value="0.24895833333333334" />

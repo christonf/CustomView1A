@@ -46,9 +46,6 @@ public class EditTextWithClear extends AppCompatEditText {
                 if(getCompoundDrawablesRelative()[2] != null) {
                     boolean isClearButtonClicked = false;
                     if(isRightToLeft) {
-                        System.out.println("apa itu le");
-                        System.out.println("x value : "+motionEvent.getX());
-                        System.out.println("width value : "+isClearButtonClicked);
                         float clearButtonStart =
                                 (getPaddingEnd() + mClearButtonImage.getIntrinsicWidth());
                         if(motionEvent.getX() < clearButtonStart) {
@@ -56,9 +53,6 @@ public class EditTextWithClear extends AppCompatEditText {
                         }
                     }
                     else{
-                        System.out.println("apa itu le");
-                        System.out.println("x value : "+motionEvent.getX());
-                        System.out.println("width value : "+isClearButtonClicked);
                         float clearButtonStart =
                                 (getWidth()-getPaddingEnd()-mClearButtonImage.getIntrinsicWidth());
                         if(motionEvent.getX() > clearButtonStart) {
