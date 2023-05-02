@@ -16,10 +16,12 @@ import androidx.core.content.res.ResourcesCompat;
 
 public class EditTextWithClear extends AppCompatEditText {
     Drawable mClearButtonImage;
+    boolean isRightToLeft;
 
     private void init() {
         mClearButtonImage = ResourcesCompat.getDrawable(getResources(),
                 R.drawable.ic_clear_opaque_24dp, null);
+        isRightToLeft = getResources().getBoolean(R.bool.is_right_to_left);
 
         addTextChangedListener(new TextWatcher() {
             @Override
@@ -41,13 +43,27 @@ public class EditTextWithClear extends AppCompatEditText {
         setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                if(getCompoundDrawables()[2] != null) {
-                    float clearButtonStart =
-                            (getWidth()-getPaddingEnd()-mClearButtonImage.getIntrinsicWidth());
+                if(getCompoundDrawablesRelative()[2] != null) {
                     boolean isClearButtonClicked = false;
-
-                    if(motionEvent.getX() > clearButtonStart) {
-                        isClearButtonClicked = true;
+                    if(isRightToLeft) {
+                        System.out.println("apa itu le");
+                        System.out.println("x value : "+motionEvent.getX());
+                        System.out.println("width value : "+isClearButtonClicked);
+                        float clearButtonStart =
+                                (getPaddingEnd() + mClearButtonImage.getIntrinsicWidth());
+                        if(motionEvent.getX() < clearButtonStart) {
+                            isClearButtonClicked = true;
+                        }
+                    }
+                    else{
+                        System.out.println("apa itu le");
+                        System.out.println("x value : "+motionEvent.getX());
+                        System.out.println("width value : "+isClearButtonClicked);
+                        float clearButtonStart =
+                                (getWidth()-getPaddingEnd()-mClearButtonImage.getIntrinsicWidth());
+                        if(motionEvent.getX() > clearButtonStart) {
+                            isClearButtonClicked = true;
+                        }
                     }
 
                     if(isClearButtonClicked) {
@@ -89,7 +105,7 @@ public class EditTextWithClear extends AppCompatEditText {
     }
 
     private void showClearButton() {
-        setCompoundDrawablesWithIntrinsicBounds(null, null, mClearButtonImage, null);
+        setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, mClearButtonImage, null);
     }
 
     private void hideClearButton() {
